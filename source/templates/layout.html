@@ -1,0 +1,9 @@
+{# Import the theme's layout. #}
+{% extends "!layout.html" %}
+
+{% set css_files = css_files + ['_static/theme.css'] %}
+{% set script_files = script_files + ['_static/myscript.js'] %}
+
+{% block footer %}
+	{% include "header.html" %}
+{% endblock %}
