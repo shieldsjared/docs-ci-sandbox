@@ -9,19 +9,19 @@ install:
 script:
 - make html
 before_deploy:
-- aws s3 rm s3://docs.mattermost.com/ --recursive --region us-east-1 
+- aws s3 rm s3://docs.mattermost.com.rocksolitinc.com/ --recursive --region us-east-1
 deploy:
-  - provider: s3
-    access_key_id: AKIAJXLDG4C2F4MIZP4Q
-    secret_access_key:
-      secure: B+Wiu/EVTzWAMFxfCHBr2I5anZ27NgGxEwVP5s8c9iczfUznex5gWkmIVcq4jHqZN6E5fJopIyvUC/lhL0nWALcptO2HSqH8Du1B1GNTus2JRgFsFSkK0wuDtx9Lhsh4ExRlfYyQn1QF5gSyjZq/a9t2ZCZpGpeVlXFGVz64v1GJOKABP79bd6FiiK7wu+o99Bqk8KrxelU6S0gSSiI+f2se1H252NCBLJcoqkXwgqccQe6ttSgW8xPEm3kpOW7oS2hjMRtsUHS5VVFngH6TZeq+6m8+eXr21IrrAw0sWR0VimXsCztzs5mK7Njs4G6suDcF3ExqK8CCIRkD2BTdoWs/6PPgNduRDIWPS9XqpA21eRQcknzFkpl2ZBeZ+gP+xTDxUwJQ/qkGLutJkAzKObG3OWDyYCUvQ2dhQ1nQ/joZhTV9iWu6WoAjqDAlQWSSYahQkqVCNDi9D0HR1ujOIs/XQ7ePfzIRIv6eXhsVttlhrnCKBou789qav+2ufEueRp2xFcMCrrcybMkAPQpoVmjsQa3obtI09CoO7JIFgaYBhgv6U7i/W1bkeId0AfSRPn8PUyCC7arRYoayht4VSWVompBmgF4lJSuJdavUpdqQE6fE/fcZIX8aaYgpJS1uPmc0Q1tAgJyKfPXyP/AwJPiBNCwh98ElE1q4iEdUPMY=
-    bucket: docs.mattermost.com
-    local_dir: build/html
-    acl: public_read
-    region: us-east-1
-    skip_cleanup: true
-    detect_encoding: true
-    on:
-      repo: mattermost/docs
-      branch: master
-      python: 2.7 
+- provider: s3
+  access_key_id: AKIAJWSK4VIQE3VQ3LVQ
+  secret_access_key:
+    secure: YnvFkBnBbrkrEe++4oCnR35f/fVYBWvN+Od/OQgr6DnCbBvbehr5XeR/nA1v1TrqhnwQSeh4WQ0f8mV9p2XWJ3VxgOeLAWZx3vlU4vlcDePDAPDfdTqCtQkmR34bLExEarhpvVeEhQAB8i8IdAVbmkRtLNj8WL5eOiXhRqpCWhFe2HvlETWSyy0B8zmBJieJ4dyswiUhRWg1sMqJMgUmverC2tFkVp2Try7q/wXQ0pHGf7CnpKbqk1B4RUYZBtCtgjLjYYYHjSshAoa08YVPoxOz6ZOJ8ksbSYIDHi7ynOky0AU2PKjwNdAV/gUFp1MltEfKK7QbVDBbbsfrY/7ELyL0HZd33DhFAQzisIWglqj1KU/d++3GNA8dJH0fEy3IVi9dkD3hwv9XWu0gFKayxSmn0wKk8ySVgV2cX/Zfxt25dzcspkTsUTzgeQpG+9dbuhkbdY4bEXbX/YB8AVoDAA1pGGCmtVcGcXkGUODvlvTseXWZ9ukc8z4YnyUghfsSg9rn5SO2DbdIirjyl0/8M4UtMDZnEMD6i1S7KRIEVcaqawV+lFjZ8KeJn7jLFKUK/hO1+MoLTJelWDFgK/c9DiLh6AN8vxyvwrHnx6vmX7qGT0DeCRaJodrD8kEWwyqqKWyx/stk7b1XCOTUPhGCfrs5P8eKkMh9nPSD63J1ja8=
+  bucket: docs.mattermost.com.rocksolitinc.com
+  local_dir: build/html
+  acl: public_read
+  region: us-east-1
+  skip_cleanup: true
+  detect_encoding: true
+  on:
+    repo: shieldsjared/docs-ci-sandbox
+    branch: master
+    python: 2.7
