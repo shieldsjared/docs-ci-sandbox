@@ -9,7 +9,7 @@ install:
 script:
 - make html
 before_deploy:
-- aws s3 rm s3://docs.mattermost.com.rocksolitinc.com/ --recursive --region us-east-1
+- aws s3 rm s3://docs.mattermost.com.rocksolitinc.com/ --recursive --region us-east-2
 deploy:
 - provider: s3
   access_key_id: AKIAJWSK4VIQE3VQ3LVQ
@@ -18,7 +18,7 @@ deploy:
   bucket: docs.mattermost.com.rocksolitinc.com
   local_dir: build/html
   acl: public_read
-  region: us-east-1
+  region: us-east-2
   skip_cleanup: true
   detect_encoding: true
   on:
